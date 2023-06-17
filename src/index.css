@@ -1,13 +1,92 @@
+@font-face {
+  font-family: witcher-font;
+  src: url("./fonts/witcher-font.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: witcher-font -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* container */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  background: no-repeat url("./img/background.jpg") 70%;
+  background-size: cover;
+}
+
+/* header */
+
+.header {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+  padding: 1rem;
+  font-family: witcher-font;
+  color: white;
+  background-color: #3a4d69;
+}
+
+.game-title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.game-rules {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  grid-column: 1/2;
+  grid-row: 3/4;
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  height: 3vh;
+  margin-top: auto;
+}
+
+.github-link {
+  color: white;
+  text-decoration: none;
+  font-family: witcher-font;
+}
+
+.github-logo {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.2rem;
 }
