@@ -25,9 +25,9 @@ code {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-rows: 0.5fr 3fr 0.2fr;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: no-repeat url("./img/background.jpg") 70%;
   background-size: cover;
 }
@@ -43,8 +43,8 @@ code {
   margin: 1rem;
   padding: 1rem;
   font-family: witcher-font;
-  color: white;
   background-color: #3a4d69;
+  color: white;
 }
 
 .game-title {
@@ -53,9 +53,9 @@ code {
 }
 
 .game-rules {
+  margin-top: 10px;
   font-size: 1.2rem;
   text-align: center;
-  margin-top: 10px;
 }
 
 .statistics {
@@ -63,6 +63,36 @@ code {
   justify-content: space-around;
   width: 100%;
   margin-top: 2rem;
+}
+
+/* Card */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.card-img {
+  width: 75%;
+  border: 5px outset #3a4d69;
+}
+
+.card-name {
+  color: white;
+  font-family: "witcher-font";
+  margin-top: 0.3rem;
+  font-size: 1.1rem;
+  padding: 0.4rem 0.5rem;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* footer */
@@ -89,4 +119,13 @@ code {
   width: 20px;
   height: 20px;
   margin-right: 0.2rem;
+}
+
+/* Desktop Styles */
+
+@media (orientation: landscape) {
+  .cards-container {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
 }
