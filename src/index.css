@@ -65,6 +65,11 @@ code {
   margin-top: 2rem;
 }
 
+.game-status {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
 /* Card */
 .cards-container {
   display: grid;

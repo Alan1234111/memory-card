@@ -7,6 +7,7 @@ function Header(props) {
         <p className="points">Points: {props.points}</p>
         <p className="high-score">High Score: {props.highScore}</p>
       </div>
+      <p className="game-status">{props.status && props.status}</p>
     </header>
   );
 }

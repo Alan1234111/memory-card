@@ -10,10 +10,15 @@ function App() {
   const [points, setPoints] = useState(0);
   const [highScore, setHighScore] = useState(0);
   const [isLose, setIsLose] = useState(false);
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (points >= highScore) {
       setHighScore(points);
+    }
+
+    if (points === characters.length) {
+      setStatus("Thats a Win! Good Job");
     }
   }, [points]);
 
@@ -25,6 +30,7 @@ function App() {
     );
     setPoints(0);
     setIsLose(false);
+    setStatus("");
   }
 
   function getRandomCharacters() {
@@ -56,17 +62,22 @@ function App() {
       });
     });
 
-    isLose ? resetGame() : setPoints((prevVal) => prevVal + 1);
-    changeCards();
-  }
+    if (isLose) {
+      resetGame();
+      setStatus("You Lose! Try again");
+    } else {
+      if (status !== "") {
+        setStatus("");
+      }
+      setPoints((prevVal) => prevVal + 1);
+    }
 
-  function changeCards() {
     setActualCharacters(getRandomCharacters());
   }
 
   return (
     <div className="container">
-      <Header points={points} highScore={highScore} />
+      <Header points={points} highScore={highScore} status={status} />
       <div className="cards-container">
         {actualCharacters.map((hero) => {
           return <Card key={hero.id} picture={hero.pictureDir} title={hero.title} handleClick={() => changeIsChosen(hero.id)} />;
