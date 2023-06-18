@@ -1,8 +1,8 @@
-function Card() {
+function Card(props) {
   return (
-    <div className="card">
-      <img className="card-img" src={""} />
-      <p className="card-name">{""}</p>
+    <div onClick={props.handleClick} className="card">
+      <img className="card-img" src={props.picture} alt="" />
+      <p className="card-name">{props.title}</p>
     </div>
   );
 }
