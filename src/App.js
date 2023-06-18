@@ -10,6 +10,7 @@ function App() {
   const [points, setPoints] = useState(0);
   const [highScore, setHighScore] = useState(localStorage.getItem("highscore") || 0);
   const [isLose, setIsLose] = useState(false);
+  const [isWon, setIsWon] = useState(false);
   const [status, setStatus] = useState("");
 
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
 
     if (points === characters.length) {
       setStatus("Thats a Win! Good Job");
+      setIsWon(true);
     }
   }, [points]);
 
@@ -46,7 +48,13 @@ function App() {
 
       tempArray.push(characters[randomNumber]);
     }
-    return tempArray;
+
+    if (tempArray.every((hero) => hero.chosen) && !isWon) {
+      console.log(tempArray);
+      return getRandomCharacters();
+    } else {
+      return tempArray;
+    }
   }
 
   function changeIsChosen(id) {
