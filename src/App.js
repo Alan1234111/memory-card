@@ -8,13 +8,14 @@ function App() {
   const [characters, setCharactes] = useState(data.cards);
   const [actualCharacters, setActualCharacters] = useState(getRandomCharacters());
   const [points, setPoints] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  const [highScore, setHighScore] = useState(localStorage.getItem("highscore") || 0);
   const [isLose, setIsLose] = useState(false);
   const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (points >= highScore) {
       setHighScore(points);
+      localStorage.setItem("highscore", points);
     }
 
     if (points === characters.length) {
