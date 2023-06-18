@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/memory-card/static/css/main.64362d27.css",
+    "main.js": "/memory-card/static/js/main.0056dc65.js",
+    "static/media/background.jpg": "/memory-card/static/media/background.3cdcc0de29377f035c82.jpg",
+    "static/media/witcher-font.ttf": "/memory-card/static/media/witcher-font.d40f3b84832ebc8a9a50.ttf",
+    "static/media/github-mark-white.svg": "/memory-card/static/media/github-mark-white.97ed8e7eef60d61ca469881dd6f34511.svg",
+    "index.html": "/memory-card/index.html",
+    "main.64362d27.css.map": "/memory-card/static/css/main.64362d27.css.map",
+    "main.0056dc65.js.map": "/memory-card/static/js/main.0056dc65.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.64362d27.css",
+    "static/js/main.0056dc65.js"
+  ]
+}
